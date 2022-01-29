@@ -1,7 +1,10 @@
-import "./App.css";
-
+import StyledButton from "./Components/Button/Button";
 function App() {
-  return <div>Hello World</div>;
+  return (
+    <div>
+      <StyledButton>hello world</StyledButton>
+    </div>
+  );
 }
 
 export default App;
