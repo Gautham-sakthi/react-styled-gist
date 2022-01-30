@@ -1,4 +1,4 @@
-import { ThemeProvider } from "styled-components";
+import { ThemeProvider, createGlobalStyle } from "styled-components";
 import StyledButton, {
   FancyButton,
   SubmitButton,
@@ -14,10 +14,18 @@ const theme = {
     primary: "#fff",
     text: "#000",
   },
+  fontFamily: "Segoe UI",
 };
+
+const GlobalStyles = createGlobalStyle`
+button{
+  font-family: ${(props) => props.theme.fontFamily}
+}
+`;
 function App() {
   return (
     <ThemeProvider theme={theme}>
+      <GlobalStyles />
       <div className="App">
         <StyledButton>hello world</StyledButton>
         <StyledButton varient="outline">hello world</StyledButton>
