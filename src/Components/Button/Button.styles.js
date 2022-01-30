@@ -22,3 +22,19 @@ export const FancyButton = styled(StyledButton)`
   background-image: linear-gradient(to right, #f6d365 0%, #fda085 100%);
   border: none;
 `;
+export const SubmitButton = styled(StyledButton).attrs((props) => ({
+  type: "submit",
+}))`
+  box-shadow: 0 9px #999;
+  &:active {
+    background-color: ${(props) =>
+      props.varient !== "outline" ? "#fff" : "#4caf50"};
+  }
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+`;
+export const Darkbutton = styled(StyledButton)`
+  border: 2px solid ${(props) => props.theme.dark.primary};
+  background-color: ${(props) => props.theme.dark.primary};
+  color: ${(props) => props.theme.dark.text};
+`;
